@@ -13,5 +13,35 @@ angular.module('DashApp')
 
         $scope.show = function(id) {
             $location.url('/loanee/' + id);
-        }
+        };
+    })
+
+    .controller('NewController', function($scope, loanee, $location) {
+        $scope.loanee =  new loanee ({
+            firstName: ["", "text"],
+            lastName: ["", "text"],
+            idNumber:["", "text"],
+            regNumber:["", "text"],
+            type:["", "text"],
+            phone:["", "tel"],
+            email:["", "email"],
+            district:["", "text"],
+            sector:["", "text"],
+            cell:["", "text"],
+            village:["", "text"],
+            tinNumber:["", "text"],
+            rssbNumber:["", "text"],
+            employer:["", "text"]
+
+        });
+
+        $scope.save = function(){
+            if($scope.newLoanee.$invalid){
+                $scope.$broadcast("record:invalid");
+            } else{
+                $scope.loanee.$save();
+                $location.url('/loanees');
+            }
+
+        };
     });

@@ -34,7 +34,7 @@ router
 
     });
 
-router
+router.
     .param('id', function(req, res, next) {
         req.dbQuery = {
             id: parseInt(req.params.id, 10)
