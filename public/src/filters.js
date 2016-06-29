@@ -6,6 +6,14 @@ angular.module('DashApp')
 	};
 })
 
+.filter('camelCase', function (){
+	return function(input){
+		return input.toLowerCase().replace(/ (\w)/g, function (match, letter) {
+			return letter.toUpperCase();
+		});
+	};
+})
+
 .filter('keyFilter', function() {
 	return function (obj, query) {
 		var result = {};
@@ -16,5 +24,5 @@ angular.module('DashApp')
 		});
 
 		return result;
-	}
-})
+	};
+});

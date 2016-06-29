@@ -8,6 +8,10 @@ angular.module('DashApp', ['ngRoute', 'ngResource', 'ngMessages'])
             .when('/loanee/new', {
             	controller: 'NewController',
             	templateUrl: 'views/new.html'
+            })
+            .when('/loanee/:id', {
+              controller: 'SingleController',
+              templateUrl: 'views/single.html'
             });
 
         $locationProvider.html5Mode(true);

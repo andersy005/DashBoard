@@ -28,17 +28,18 @@ router
         var loanee = req.body;
         loanee.userId = req.user.id;
 
-        db.insert(contact, function(err, data) {
+        db.insert(loanee, function(err, data) {
             res.json(data);
         });
 
     });
 
-router.
+router
     .param('id', function(req, res, next) {
         req.dbQuery = {
             id: parseInt(req.params.id, 10)
         };
+        next();
 
     })
 

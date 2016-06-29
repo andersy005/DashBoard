@@ -3,13 +3,20 @@
     <head>
         <title>DashBoard</title>
         <base href="/">
+        <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="src/bootstrap.min.css">
-         <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css">
+
     </head>
     <body>
         <div class="container">
             <div class="page-header">
                 <h1>DashBoard</h1>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-12" ng-include='"views/nav.html"'>
+
+              </div>
             </div>
 
             <div class="row">
@@ -26,8 +33,8 @@
         <script src="src/controllers.js"></script>
 		<script src="src/factories.js"></script>
 		<script src="src/filters.js"></script>
-		<script src="src/directives.js"></script> 
-		
+		<script src="src/directives.js"></script>
+
 
 
 
