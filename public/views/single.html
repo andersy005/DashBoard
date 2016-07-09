@@ -1,0 +1,21 @@
+<h2>
+    {{loanee.firstName[0]}}
+    {{loanee.lastName[0]}}
+</h2>
+
+<form name="editLoanee" class="form-horizontal">
+    <form-field record="loanee" field="firstName" required="true"></form-field>
+    <form-field record="loanee" field="lastName" required="true"></form-field>
+    <form-field record="loanee" field="{{k}}" ng-repeat='(k,y) in loanee | keyFilter: "firstName" | keyFilter: "lastName" | keyFilter: "id" | keyFilter: "userId" '></form-field>
+
+    <new-field record="loanee"></new-field>
+
+    <div class="row form-group">
+        <div class="col-sm-offset-2">
+            <button class="btn btn-danger" ng-click="delete()">
+                Delete Loanee
+            </button>
+        </div>
+    </div>
+
+</form>
