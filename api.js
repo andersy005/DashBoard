@@ -6,16 +6,11 @@ var express = require('express'),
     router = express.Router();
 
 router
-    .use(function(req, res, next) {
-        if (!req.user) req.user = {
-            id: 1
-        };
-        next();
-    })
+    
 
-.use(bodyParser.json())
+    .use(bodyParser.json())
     .route('/loanee')
-    .get(function(req, res) {
+       .get(function(req, res) {
         db.find({
             userId: parseInt(req.user.id, 10)
         }, function(err, data) {
